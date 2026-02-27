@@ -1,13 +1,13 @@
 resource "google_compute_instance" "this_instance" {
   name         = var.instance_name
-  machine_type = var.instanace_type
+  machine_type = var.instance_type
   zone         = var.instance_zone
   tags         = var.instance_tags
   labels       = var.instance_labels
 
   boot_disk {
     initialize_params {
-      image = var.instance_iamge
+      image = var.instance_image
     }
   }
   network_interface {

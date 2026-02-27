@@ -15,7 +15,7 @@ variable "instance_labels" {
 }
 variable "instance_tags" {
   description = "network tags"
-  type        = map(string)
+  type        = list(string)
 
   validation {
     condition     = alltrue([for k, v in var.instance_tags : can(regex("^[a-z0-9_-]+$", k))])
