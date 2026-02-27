@@ -5,7 +5,7 @@ variable "instance_name" {
 }
 variable "instance_labels" {
   description = "the labels of instance"
-  type        = map(string)
+  type        = list(string)
 
   validation {
     condition     = alltrue([for k, v in var.instance_labels : can(regex("^[a-z0-9_-]+$", k))])
@@ -24,12 +24,12 @@ variable "instance_tags" {
 
 }
 
-variable "instanace_type" {
+variable "instance_type" {
   description = "what is the image of the instanace"
   type        = string
 
 }
-variable "instance_iamge" {
+variable "instance_image" {
   description = "the name of image"
   type        = string
 
