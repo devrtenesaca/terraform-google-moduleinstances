@@ -8,7 +8,7 @@ variable "instance_labels" {
   type        = map(string)
 
   validation {
-    condition     = alltrue([for k, v in var.mod_labels : can(regex("^[a-z0-9_-]+$", k))])
+    condition     = alltrue([for k, v in var.instance_labels : can(regex("^[a-z0-9_-]+$", k))])
     error_message = "Las llaves de los labels deben ser minúsculas y no contener espacios."
   }
 
@@ -18,7 +18,7 @@ variable "instance_tags" {
   type        = map(string)
 
   validation {
-    condition     = alltrue([for k, v in var.mod_tags : can(regex("^[a-z0-9_-]+$", k))])
+    condition     = alltrue([for k, v in var.instance_tags : can(regex("^[a-z0-9_-]+$", k))])
     error_message = "Las llaves de los tags deben ser minúsculas y no contener espacios."
   }
 
