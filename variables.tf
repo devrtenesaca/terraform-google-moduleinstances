@@ -9,7 +9,7 @@ variable "instance_labels" {
 
   validation {
     condition     = alltrue([for k, v in var.instance_labels : can(regex("^[a-z0-9_-]+$", k))])
-    error_message = "Las llaves de los labels deben ser minúsculas y no contener espacios."
+    error_message = "Las llaves de los labels deben ser minúsculas sin espacios."
   }
 
 }
